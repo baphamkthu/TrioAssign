@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using RestServer.models;
 
@@ -90,13 +87,13 @@ namespace RestServer.Controllers
             returnList = ExecuteAndReadReply(myQuery);
 
 
-            if (returnList.Count == 1) //only bothering with single results for now. 
+            if (returnList.Count > 0) //only bothering with single results for now. 
             {
                 return returnList[0];
             }
-            else // something has gone wrong here... Duplicates or nothing..
+            else // something has gone wrong here...  nothing..
             {
-                return new Person("", "", "", "");
+                return new Person();
             }
         }
 

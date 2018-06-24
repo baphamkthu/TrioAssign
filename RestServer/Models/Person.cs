@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestServer.models
 {
@@ -13,6 +9,11 @@ namespace RestServer.models
         public String Phone { get; set; }
         public String Address { get; set; }
 
+
+        public Person()
+        {
+
+        }
 
         public Person(string _name, string _email, string _phone, string _address)
         {

@@ -66,3 +66,4 @@ C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.csp
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.csproj.CopyComplete
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.dll
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.pdb
+C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.csprojAssemblyReference.cache
