@@ -1,0 +1,8 @@
+CREATE TABLE `customers`.`customerdata` (
+  `userID` INT NOT NULL,
+  `NAME` VARCHAR(45) NULL,
+  `EMAIL` VARCHAR(45) NULL,
+  `PHONE` VARCHAR(45) NULL,
+  `ADDRESS` VARCHAR(45) NULL,
+  PRIMARY KEY (`userID`),
+  UNIQUE INDEX `userID_UNIQUE` (`userID` ASC) VISIBLE);
