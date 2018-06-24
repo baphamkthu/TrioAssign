@@ -62,7 +62,6 @@ C:\Users\erell\source\repos\TrionaAssignment\RestServer\bin\System.Net.Http.Form
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\bin\System.Web.Http.xml
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\bin\System.Web.Http.WebHost.xml
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.csprojAssemblyReference.cache
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.csproj.CoreCompileInputs.cache
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.csproj.CopyComplete
 C:\Users\erell\source\repos\TrionaAssignment\RestServer\obj\Debug\RestServer.dll

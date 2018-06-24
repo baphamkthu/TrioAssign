@@ -64,7 +64,10 @@ namespace RestServer.Controllers
         {
             string myQuery = "";
 
-            myQuery = $"insert into customerdata (NAME, EMAIL,PHONE, ADDRESS ) values('{_person.Name}', '{_person.Email}', '{_person.Phone}','{_person.Address}');";
+            myQuery = $"insert into customerdata (NAME, EMAIL,PHONE, ADDRESS ) values('" +
+                        $"{WashOutSQL(_person.Name)}', '{WashOutSQL(_person.Email)}', '" +
+                        $"{WashOutSQL(_person.Phone)}','{WashOutSQL(_person.Address)}');";
+
             return ExecuteQueryDontWait(myQuery);
         }
 
@@ -81,16 +84,13 @@ namespace RestServer.Controllers
         {
             String myQuery = "";
             List < Person > returnList;
-            if (myString.Contains("@")){
-                myQuery = $"select * from customerdata where EMAIL = '{myString}'";
-            }else {
-                myQuery = $"select * from customerdata where NAME = '{myString}'";
-            }
+
+            myQuery = $"select * from customerdata where NAME = '{WashOutSQL(myString)}'";
 
             returnList = ExecuteAndReadReply(myQuery);
 
 
-            if (returnList.Count == 1)
+            if (returnList.Count == 1) //only bothering with single results for now. 
             {
                 return returnList[0];
             }
@@ -154,6 +154,15 @@ namespace RestServer.Controllers
                 return true;
             }
             return false;
+        }
+
+        private string WashOutSQL(string myString)
+        {
+            //Simple, could do more..
+            myString = myString.Replace("\"", "");
+            myString = myString.Replace("'","");
+            myString = myString.Replace(";", "");
+            return myString;
         }
     }
 }
