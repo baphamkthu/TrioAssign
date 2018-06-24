@@ -42,8 +42,6 @@ namespace TrionaAssignment
                 myTask.Wait();
                 List<Person> myresult = myTask.Result;
                 dataGridView1.DataSource = myresult;
-
-
             }
             catch (Exception ex)
             {

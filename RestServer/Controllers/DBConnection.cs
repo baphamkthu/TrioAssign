@@ -80,9 +80,7 @@ namespace RestServer.Controllers
         public List<Person> GetSpecificUser(string myString)
         {
             String myQuery = "";
-            List<Person> returnList;
-
-            //Limiting results to first and best to simplify. Else would need multiple search results. 
+            List<Person> returnList; 
             myQuery = $"select * from customerdata where NAME = '{WashOutSQL(myString)}'";
 
             returnList = ExecuteAndReadReply(myQuery);
