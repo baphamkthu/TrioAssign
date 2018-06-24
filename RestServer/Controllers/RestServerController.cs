@@ -21,15 +21,15 @@ namespace RestServer.Controllers
 
 
         // GET: api/RestServer/5
-        public Person Get(String id)
+        public List<Person> Get(String id)
         {
             DBConnection myConn = new DBConnection();
-            Person myPerson;
+            List<Person> myPersonList = new List<Person>();
             myConn.SetupUserConnection("erik2", "123321");
 
-            myPerson = myConn.GetSpecificUser(id);
+            myPersonList = myConn.GetSpecificUser(id);
 
-            return myPerson;
+            return myPersonList;
         } 
 
 

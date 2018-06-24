@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,17 +31,37 @@ namespace TrionaAssignment
         }
 
 
-    
 
-        private void button_getAllUsers_click(object sender, EventArgs e)
+
+        private void button_getsingle_click(object sender, EventArgs e)
         {
 
             try
             {
-                Task<Person> myTask = Task.Run(() => Program.getSelectedPerson(textbox_search.Text));
+                Task<List<Person>> myTask = Task.Run(() => Program.getSelectedPerson(textbox_search.Text));
                 myTask.Wait();
-                Person myresult = myTask.Result;
-                ShowUser(myresult);
+                List<Person> myresult = myTask.Result;
+                dataGridView1.DataSource = myresult;
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+
+        private void button_getAll_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Task<List<Person>> myTask = Task.Run(() => Program.getMultiplePerson());
+                myTask.Wait();
+                List<Person> myresult = myTask.Result;
+                dataGridView1.DataSource = myresult;
                
             
             }
@@ -94,5 +115,7 @@ namespace TrionaAssignment
         {
 
         }
+
+       
     }
 }

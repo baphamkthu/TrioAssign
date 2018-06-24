@@ -77,24 +77,17 @@ namespace RestServer.Controllers
             return returnList;
         }
 
-        public Person GetSpecificUser(string myString)
+        public List<Person> GetSpecificUser(string myString)
         {
             String myQuery = "";
-            List < Person > returnList;
+            List<Person> returnList;
 
+            //Limiting results to first and best to simplify. Else would need multiple search results. 
             myQuery = $"select * from customerdata where NAME = '{WashOutSQL(myString)}'";
 
             returnList = ExecuteAndReadReply(myQuery);
+            return returnList;
 
-
-            if (returnList.Count > 0) //only bothering with single results for now. 
-            {
-                return returnList[0];
-            }
-            else // something has gone wrong here...  nothing..
-            {
-                return new Person();
-            }
         }
 
 

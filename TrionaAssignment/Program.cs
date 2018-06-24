@@ -5,6 +5,7 @@ using RestServer.models;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 
 namespace TrionaAssignment
@@ -22,14 +23,23 @@ namespace TrionaAssignment
             Application.Run(new Form1());
         }
 
-        
 
+        public static async Task<List<Person>> getMultiplePerson()
+        {
+            List<Person> Mylist = new List<Person>();
+            HttpClient myClient = NewHttpClient();
+            var response = await myClient.GetAsync("api/RestServer/");
+            var ResultList = await response.Content.ReadAsAsync<List<Person>>();
+            Mylist = ResultList;
 
-        public static async Task<Person> getSelectedPerson(string myRequest)
+            return Mylist;
+        }
+
+        public static async Task<List<Person>> getSelectedPerson(string myRequest)
         {
             HttpClient myClient = NewHttpClient();
             var response = await myClient.GetAsync("api/RestServer/" + myRequest);
-            var ResultPerson = await response.Content.ReadAsAsync<Person>();
+            var ResultPerson = await response.Content.ReadAsAsync<List<Person>>();
             return ResultPerson;
 
         }
