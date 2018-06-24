@@ -20,7 +20,6 @@ namespace RestServer.Controllers
             DBConnection myConn = new DBConnection();
             myConn.SetupUserConnection("erik2", "123321");
             myPersonList = myConn.GetAllUsers();
-            //var thisString = 
             return myPersonList;// JsonConvert.SerializeObject(myPersonList); ;
         }
 
