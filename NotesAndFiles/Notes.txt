@@ -1,0 +1,18 @@
+Setupflow:
+MySQL DB
+
+SourceCode:
+verify port in code
+Set hardcoded login data
+run APi
+	Verify with Restlet Client in chrome @ https://restlet.com/modules/client/
+run GUI. 
+Read/Write from DB
+
+Notes: 
+	TL;DR: No security, prototype/proof of concept.
+	Lackluster security. 
+	SQL injections to DB not handled.
+	Passcodes.
+	Encryption.
+	No unittests. 
